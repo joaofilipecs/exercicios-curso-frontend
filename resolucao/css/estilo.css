@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:ital,wght@0,100..900;1,100..900&family=Viaoda+Libre&display=swap');
+
+:root{
+    --texttopheadercolor: #162028;
+    --textmenucolor: #425564;
+    --textcolor: #555;
+    --blue-bg-color: #003d52;
+    --footer-bg-color: #0b171f;
+    --footer-text-color: #6f8597;
+    --main-content-max-width: 110rem;
+    --top-height: 7.5rem;
+    font-size: 62.5%;
+}
+
+body{
+    margin: 0;
+    font-family: "Roboto";
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3{
+      font-family: "MedievalSharp";
+}
+
+.main-header__top{
+    
+/*
+    min-width abaixo não creio que seja uma boa solução - creio que é necessario aprender antes e aplicar a responsividade
+*/
+    min-width: 1110px;
+    
+    background-color: var(--texttopheadercolor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    
+/*    min-height abaixo para poder calcular o tamanho da altura e incluir no margin-top do main-header__image. Será necessário um max-height também?*/
+    min-height: var(--top-height);
+    
+/*    como usar o 100vw sem que gera barra de rolagem horizontal?*/
+/*    width: 100vw;*/
+    
+/*    width: 100%;*/
+    
+}
+
+/*talvez melhor abordagem fosse colocar uma <img> no html*/
+.main-header__image{
+    
+    object-fit: cover;
+    
+/*    calculo abaixo nao funcionou*/
+    height: cal(100% - var(--top-height));
+    
+    width: 100%;
+}
+
+
+/*
+.main-header__top h1{
+    font-size: 4.2rem;
+    margin: 1.4rem auto 1rem 15rem;
+}
+*/
+/*abaixo solução melhor*/
+
+.main-header{
+    font-size: 1.6rem;
+}
+.main-header__top h1{
+    font-size: 2.5em;
+/*    equivale a 4rem = 40pix*/
+    margin: 0.35em 3.75em 0.25em 3.75em;
+/*    margin: 1.4rem auto 1rem 15rem;*/
+}
+
+
+
+.main-header__menu ul{
+    list-style-type: none;
+    display: flex; 
+    gap: 5rem;
+    
+
+    font-size: 1.125em;
+/*    equivale a 18px*/
+/*    font-size: 1.8rem;*/
+    
+    
+/*    font-size: 0.5em; */
+/*    letter spacing nao se relaciona com font-size?*/
+    
+    text-transform: uppercase;
+    
+    letter-spacing: 0.3125em;
+/*    equivale a 5px*/
+    
+/*    letter-spacing: 0.5rem;*/
+/*    equivale a 5px*/
+    
+    margin-right: 3.75em;
+    
+/*    margin-right: 6rem;*/
+    /*equivale a 60px*/
+    
+}
+.main-header__menu ul li a{
+    color: var(--textmenucolor);
+    
+    transition: text-shadow 0.3s, color 0.2s;
+}
+
+.main-header__menu ul li a:hover{
+    color: white;
+    text-shadow: 0 0.2rem 0.3rem gray, 0 -0.2rem 0.3rem gray, 0.2rem 0 0.3rem gray, -0.2rem 0 0.3rem gray;
+    
+/*    abaixo nao deu certo*/
+/*    text-shadow: 0 0.011em 0.016em gray, 0 -0.011em 0.016em gray, 0.011em 0 0.016em gray, -0.011em 0 0.016em gray;*/
+}
+
+/*as quatro primeiras linhas se repetem no main-cont-white article - talvez nao esteja aproveitando as classes*/
+
+main{
+    font-size: 2.2rem;
+}
+.main-content-white {
+   
+    width: 90%;
+    margin: 6.36em auto 5em;
+/*    margin: 14rem auto 10rem;*/
+    max-width: var(--main-content-max-width);
+    font-size: 1em;
+    text-align: center;
+    
+}
+
+
+.main-content-white article{
+    margin-bottom: 6.36em;
+}
+
+.main-content-white h2{
+    
+    font-weight: normal;
+    font-size: 2em;
+    color: #333;
+}
+.main-content-white p {
+    
+    font-weight: normal;
+    line-height: 1.81em;
+/*    line-height: 4rem;*/
+    color: --textcolor;
+}
+
+.main-content-white__box-models{
+/*    width: %;*/
+    display: flex;
+    justify-content: space-between;
+/*    align-items: center;*/
+    line-height: normal;
+    flex-wrap: wrap;
+    
+}
+
+.main-content-white__image{
+    width: 15.45em;
+/*    width: 34rem;*/
+    height: 11.9em;
+/*    height: 26.2rem;*/
+    
+/*    não sei por que calculo abaixo não deu certo*/
+/*    width: cal(192px * 2);*/
+  
+/*    height: cal(108px * 2);*/
+    object-fit: cover;
+    object-position: center;
+    
+    box-shadow: 0px 2px 5px 0px black;
+/*    transition: width 0.5s linear, height 0.5s linear;*/
+}
+
+/*
+.main-content-white__image:hover{
+    width: 20.45em;
+    height: 16.9em;
+    position: absolute;
+}
+*/
+
+.main-content-white__box-models h3{
+    margin: 0.681em auto 0.45em auto;
+    color: var(--textcolor);
+}
+.main-content-white__box-models p{
+    margin: 0;
+}
+
+/*classe?*/
+.main-content-blue article{
+    width: 90%;
+    margin: auto;
+    max-width: var(--main-content-max-width);
+    font-size: 1em;
+    
+    text-align: left;
+}
+
+
+.main-content-blue{
+    padding: 5.9em 0;
+    background-color: var(--blue-bg-color);
+    color: white;
+    background-image: url(../imagens/bg_detalhe.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 27.27em;
+}
+
+/*classe?*/
+.main-content-blue h2{
+    font-size: 2.72em;
+    font-weight: normal;
+    max-width: 24ch;
+}
+
+/*classe?*/
+.main-content-blue p{
+/*calculo abaixo não funciona. Por que?*/
+/*    width: cal(var(--main-content-max-width) * 0.6);*/
+    
+    max-width: 36.36em;
+    line-height: 1.5em;
+    
+}
+
+.main-footer-copyright{
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 1.87em 0;
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 0.31em;   
+}
+
+
+
+    
+
+
+
+
+
+
+
